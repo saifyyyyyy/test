@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <title>
+    {{ .Title }}
+  </title>
+  <meta name="description" content="{{ .Description }}" />
+  {{/* styles */}}
+  {{ $options := dict "inlineImports" true }}
+  {{ $styles := resources.Get "css/styles.css" }}
+  {{ $styles = $styles | css.PostCSS $options }}
+  {{ if hugo.IsProduction }}
+  {{ $styles = $styles | minify | fingerprint | resources.PostProcess }}
+  {{ end }}
+  <link href="{{ $styles.RelPermalink }}" rel="stylesheet" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+
+<body class="my-10">
+  {{ partial "header.html" . }}
+  {{ block "main" . }}{{ end }}
+  {{ partial "footer.html" . }}
+  {{ partial "js.html" . }}
+</body>
+
+</html>
