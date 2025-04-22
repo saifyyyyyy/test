@@ -19,9 +19,9 @@ address:
     timings_heading: Horaires d'ouverture
     timings:
         - title: Du lundi au vendredi
-          times: De 7h h 30 à 12 h 00 - 14 h 00 à 17 h 00
+          times: De 7h 30 à 12 h 00 - 14 h 00 à 17 h 00
         - title: Samedi 
-          times: De 7h h 30 à 12 h 00
+          times: De 7h 30 à 12 h 00
     address_heading: Notre Emplacement
     address: 
         - Rendez-nous visite
