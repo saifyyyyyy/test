@@ -1,117 +1,221 @@
 {{ define "main" }}
-<section id="accueil" class="hero">
-  <div class="hero-overlay"></div>
-  <div class="container">
-    <div class="hero-content">
-      <h1>Bricolage & Quincaillerie</h1>
-      <p>Votre magasin de proximité pour tous vos projets de rénovation et construction</p>
-      <div class="info-block">
-        <img src="https://cdn.jsdelivr.net/npm/lucide-static@0.344.0/icons/map-pin.svg" alt="Location" class="icon">
-        <p>15 Rue des Artisans, 75011 Paris, France</p>
+<section id="accueil" class="relative min-h-screen flex items-center bg-amber-50"
+  style="background-image: url(&quot;https://images.pexels.com/photos/1797428/pexels-photo-1797428.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=1600&quot;); background-size: cover; background-position: center center;">
+  <div class="absolute inset-0 bg-black bg-opacity-50"></div>
+  <div class="container mx-auto px-4 relative z-10">
+    <div class="max-w-2xl bg-white bg-opacity-90 p-8 md:p-12 rounded-lg shadow-xl">
+      <h1 class="text-4xl md:text-5xl font-bold text-amber-900 mb-6">Bricolage &amp; Quincaillerie</h1>
+      <p class="text-lg md:text-xl text-amber-800 mb-8">Votre magasin de proximité pour tous vos projets de rénovation
+        et construction</p>
+      <div class="flex items-center mb-4"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20"
+          viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+          stroke-linejoin="round" class="lucide lucide-map-pin text-amber-700 mr-3">
+          <path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"></path>
+          <circle cx="12" cy="10" r="3"></circle>
+        </svg>
+        <p class="text-gray-800">15 Rue des Artisans, 75011 Paris, France</p>
       </div>
-      <div class="info-block">
-        <img src="https://cdn.jsdelivr.net/npm/lucide-static@0.344.0/icons/clock.svg" alt="Hours" class="icon">
-        <p>Lun-Sam: 8h00-19h00 | Dim: 9h00-13h00</p>
-      </div>
-      <a href="#produits" class="cta-button">Découvrir nos produits</a>
+      <div class="flex items-center mb-6"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20"
+          viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+          stroke-linejoin="round" class="lucide lucide-clock text-amber-700 mr-3">
+          <circle cx="12" cy="12" r="10"></circle>
+          <polyline points="12 6 12 12 16 14"></polyline>
+        </svg>
+        <p class="text-gray-800">Lun-Sam: 8h00-19h00 | Dim: 9h00-13h00</p>
+      </div><a href="#produits"
+        class="inline-block bg-amber-700 hover:bg-amber-800 text-white font-medium py-3 px-6 rounded-lg transition-colors duration-300">Découvrir
+        nos produits</a>
     </div>
   </div>
 </section>
 
-<section id="produits" class="products">
-  <div class="container">
-    <h2>Nos Catégories de Produits</h2>
-    <div class="product-grid">
-      <div class="product-card">
-        <img src="https://cdn.jsdelivr.net/npm/lucide-static@0.344.0/icons/wrench.svg" alt="Outils"
-          class="product-icon">
-        <h3>Outils</h3>
-        <p>Tournevis, marteaux, clés, pinces et autres outils essentiels pour tous vos travaux de bricolage.</p>
+<section id="produits" class="py-20 bg-amber-100">
+  <div class="container mx-auto px-4">
+    <h2 class="text-3xl md:text-4xl font-bold text-amber-900 text-center mb-12">Nos Catégories de Produits</h2>
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+      <div class="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition-shadow duration-300">
+        <div class="p-6">
+          <div class="mb-4 flex justify-center"><svg xmlns="http://www.w3.org/2000/svg" width="40" height="40"
+              viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+              stroke-linejoin="round" class="lucide lucide-wrench text-amber-700">
+              <path
+                d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z">
+              </path>
+            </svg></div>
+          <h3 class="text-xl font-semibold text-amber-800 mb-2 text-center">Outils</h3>
+          <p class="text-gray-700 text-center">Tournevis, marteaux, clés, pinces et autres outils essentiels pour tous
+            vos travaux de bricolage.</p>
+        </div>
       </div>
-      <div class="product-card">
-        <img src="https://cdn.jsdelivr.net/npm/lucide-static@0.344.0/icons/paintbrush.svg" alt="Peinture"
-          class="product-icon">
-        <h3>Peinture</h3>
-        <p>Large sélection de peintures intérieures et extérieures, pinceaux, rouleaux et accessoires.</p>
+      <div class="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition-shadow duration-300">
+        <div class="p-6">
+          <div class="mb-4 flex justify-center"><svg xmlns="http://www.w3.org/2000/svg" width="40" height="40"
+              viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+              stroke-linejoin="round" class="lucide lucide-paintbrush text-amber-700">
+              <path
+                d="M18.37 2.63 14 7l-1.59-1.59a2 2 0 0 0-2.82 0L8 7l9 9 1.59-1.59a2 2 0 0 0 0-2.82L17 10l4.37-4.37a2.12 2.12 0 1 0-3-3Z">
+              </path>
+              <path d="M9 8c-2 3-4 3.5-7 4l8 10c2-1 6-5 6-7"></path>
+              <path d="M14.5 17.5 4.5 15"></path>
+            </svg></div>
+          <h3 class="text-xl font-semibold text-amber-800 mb-2 text-center">Peinture</h3>
+          <p class="text-gray-700 text-center">Large sélection de peintures intérieures et extérieures, pinceaux,
+            rouleaux et accessoires.</p>
+        </div>
       </div>
-      <div class="product-card">
-        <img src="https://cdn.jsdelivr.net/npm/lucide-static@0.344.0/icons/hammer.svg" alt="Quincaillerie"
-          class="product-icon">
-        <h3>Quincaillerie</h3>
-        <p>Clous, vis, écrous, boulons et autres fixations pour tous types de projets.</p>
+      <div class="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition-shadow duration-300">
+        <div class="p-6">
+          <div class="mb-4 flex justify-center"><svg xmlns="http://www.w3.org/2000/svg" width="40" height="40"
+              viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+              stroke-linejoin="round" class="lucide lucide-hammer text-amber-700">
+              <path d="m15 12-8.373 8.373a1 1 0 1 1-3-3L12 9"></path>
+              <path d="m18 15 4-4"></path>
+              <path
+                d="m21.5 11.5-1.914-1.914A2 2 0 0 1 19 8.172V7l-2.26-2.26a6 6 0 0 0-4.202-1.756L9 2.96l.92.82A6.18 6.18 0 0 1 12 8.4V10l2 2h1.172a2 2 0 0 1 1.414.586L18.5 14.5">
+              </path>
+            </svg></div>
+          <h3 class="text-xl font-semibold text-amber-800 mb-2 text-center">Quincaillerie</h3>
+          <p class="text-gray-700 text-center">Clous, vis, écrous, boulons et autres fixations pour tous types de
+            projets.</p>
+        </div>
+      </div>
+      <div class="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition-shadow duration-300">
+        <div class="p-6">
+          <div class="mb-4 flex justify-center"><svg xmlns="http://www.w3.org/2000/svg" width="40" height="40"
+              viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+              stroke-linejoin="round" class="lucide lucide-pencil text-amber-700">
+              <path d="M17 3a2.85 2.83 0 1 1 4 4L7.5 20.5 2 22l1.5-5.5Z"></path>
+              <path d="m15 5 4 4"></path>
+            </svg></div>
+          <h3 class="text-xl font-semibold text-amber-800 mb-2 text-center">Électricité</h3>
+          <p class="text-gray-700 text-center">Câbles, prises, interrupteurs et autres fournitures électriques pour vos
+            installations.</p>
+        </div>
+      </div>
+      <div class="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition-shadow duration-300">
+        <div class="p-6">
+          <div class="mb-4 flex justify-center"><svg xmlns="http://www.w3.org/2000/svg" width="40" height="40"
+              viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+              stroke-linejoin="round" class="lucide lucide-pipette text-amber-700">
+              <path d="m2 22 1-1h3l9-9"></path>
+              <path d="M3 21v-3l9-9"></path>
+              <path d="m15 6 3.4-3.4a2.1 2.1 0 1 1 3 3L18 9l.4.4a2.1 2.1 0 1 1-3 3l-3.8-3.8a2.1 2.1 0 1 1 3-3l.4.4Z">
+              </path>
+            </svg></div>
+          <h3 class="text-xl font-semibold text-amber-800 mb-2 text-center">Produits Chimiques</h3>
+          <p class="text-gray-700 text-center">Colles, solvants, nettoyants et autres produits chimiques pour
+            l'entretien et la réparation.</p>
+        </div>
+      </div>
+      <div class="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition-shadow duration-300">
+        <div class="p-6">
+          <div class="mb-4 flex justify-center"><svg xmlns="http://www.w3.org/2000/svg" width="40" height="40"
+              viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+              stroke-linejoin="round" class="lucide lucide-blocks text-amber-700">
+              <rect width="7" height="7" x="14" y="3" rx="1"></rect>
+              <path d="M10 21V8a1 1 0 0 0-1-1H4a1 1 0 0 0-1 1v12a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1v-5a1 1 0 0 0-1-1H3">
+              </path>
+            </svg></div>
+          <h3 class="text-xl font-semibold text-amber-800 mb-2 text-center">Matériaux</h3>
+          <p class="text-gray-700 text-center">Planches de bois, ciment, tuyaux et autres matériaux de construction pour
+            vos projets.</p>
+        </div>
       </div>
     </div>
   </div>
 </section>
 
-<section id="photos" class="store-photos">
-  <div class="container">
-    <h2>Notre Magasin</h2>
-    <div class="photo-grid">
-      <div class="photo-card">
-        <img
-          src="https://images.pexels.com/photos/1669754/pexels-photo-1669754.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
-          alt="Outils">
-        <div class="photo-caption">Notre large sélection d'outils</div>
+<section class="py-20 bg-amber-50">
+  <div class="container mx-auto px-4">
+    <h2 class="text-3xl md:text-4xl font-bold text-amber-900 text-center mb-12">Notre Magasin</h2>
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+      <div class="relative group overflow-hidden rounded-lg shadow-md h-64 md:h-80"><img
+          src="https://images.pexels.com/photos/1669754/pexels-photo-1669754.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=1260&amp;h=750&amp;dpr=2"
+          alt="Notre large sélection d'outils"
+          class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110">
+        <div
+          class="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-4">
+          <p class="text-white font-medium">Notre large sélection d'outils</p>
+        </div>
       </div>
-      <div class="photo-card">
-        <img
-          src="https://images.pexels.com/photos/5691605/pexels-photo-5691605.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
-          alt="Peinture">
-        <div class="photo-caption">Section peinture et décoration</div>
+      <div class="relative group overflow-hidden rounded-lg shadow-md h-64 md:h-80"><img
+          src="https://images.pexels.com/photos/5691605/pexels-photo-5691605.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=1260&amp;h=750&amp;dpr=2"
+          alt="Section peinture et décoration"
+          class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110">
+        <div
+          class="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-4">
+          <p class="text-white font-medium">Section peinture et décoration</p>
+        </div>
       </div>
-      <div class="photo-card">
-        <img
-          src="https://images.pexels.com/photos/1558687/pexels-photo-1558687.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
-          alt="Matériaux">
-        <div class="photo-caption">Matériaux de construction de qualité</div>
+      <div class="relative group overflow-hidden rounded-lg shadow-md h-64 md:h-80"><img
+          src="https://images.pexels.com/photos/1558687/pexels-photo-1558687.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=1260&amp;h=750&amp;dpr=2"
+          alt="Matériaux de construction de qualité"
+          class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110">
+        <div
+          class="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-4">
+          <p class="text-white font-medium">Matériaux de construction de qualité</p>
+        </div>
       </div>
     </div>
   </div>
 </section>
 
-<section id="horaires" class="store-info">
-  <div class="container">
-    <h2>Informations Pratiques</h2>
-    <div class="info-grid">
-      <div class="hours-card">
-        <h3>
-          <img src="https://cdn.jsdelivr.net/npm/lucide-static@0.344.0/icons/clock.svg" alt="Hours" class="icon">
-          Horaires d'Ouverture
-        </h3>
-        <ul>
-          <li><span>Lundi</span><span>8h00 - 19h00</span></li>
-          <li><span>Mardi</span><span>8h00 - 19h00</span></li>
-          <li><span>Mercredi</span><span>8h00 - 19h00</span></li>
-          <li><span>Jeudi</span><span>8h00 - 19h00</span></li>
-          <li><span>Vendredi</span><span>8h00 - 19h00</span></li>
-          <li><span>Samedi</span><span>8h00 - 19h00</span></li>
-          <li><span>Dimanche</span><span>9h00 - 13h00</span></li>
+<section id="horaires" class="py-20 bg-white">
+  <div class="container mx-auto px-4">
+    <h2 class="text-3xl md:text-4xl font-bold text-amber-900 text-center mb-12">Informations Pratiques</h2>
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-16">
+      <div class="bg-amber-50 p-6 md:p-8 rounded-lg shadow-md">
+        <h3 class="text-2xl font-semibold text-amber-800 mb-6 flex items-center"><svg xmlns="http://www.w3.org/2000/svg"
+            width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+            stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-clock mr-3 text-amber-700">
+            <circle cx="12" cy="12" r="10"></circle>
+            <polyline points="12 6 12 12 16 14"></polyline>
+          </svg>Horaires d'Ouverture</h3>
+        <ul class="space-y-3">
+          <li class="flex justify-between"><span class="font-medium text-amber-900">Lundi</span><span
+              class="text-gray-700">8h00 - 19h00</span></li>
+          <li class="flex justify-between"><span class="font-medium text-amber-900">Mardi</span><span
+              class="text-gray-700">8h00 - 19h00</span></li>
+          <li class="flex justify-between"><span class="font-medium text-amber-900">Mercredi</span><span
+              class="text-gray-700">8h00 - 19h00</span></li>
+          <li class="flex justify-between"><span class="font-medium text-amber-900">Jeudi</span><span
+              class="text-gray-700">8h00 - 19h00</span></li>
+          <li class="flex justify-between"><span class="font-medium text-amber-900">Vendredi</span><span
+              class="text-gray-700">8h00 - 19h00</span></li>
+          <li class="flex justify-between"><span class="font-medium text-amber-900">Samedi</span><span
+              class="text-gray-700">8h00 - 19h00</span></li>
+          <li class="flex justify-between"><span class="font-medium text-amber-900">Dimanche</span><span
+              class="text-gray-700">9h00 - 13h00</span></li>
         </ul>
       </div>
-      <div class="location-card">
-        <h3>
-          <img src="https://cdn.jsdelivr.net/npm/lucide-static@0.344.0/icons/map-pin.svg" alt="Location" class="icon">
-          Notre Emplacement
-        </h3>
-        <p>15 Rue des Artisans</p>
-        <p>75011 Paris, France</p>
-        <div class="contact-info">
-          <p>
-            <img src="https://cdn.jsdelivr.net/npm/lucide-static@0.344.0/icons/phone.svg" alt="Phone" class="icon">
-            +33 1 23 45 67 89
-          </p>
-          <p>
-            <img src="https://cdn.jsdelivr.net/npm/lucide-static@0.344.0/icons/mail.svg" alt="Email" class="icon">
-            contact@bricolage-quincaillerie.fr
-          </p>
+      <div class="bg-amber-50 p-6 md:p-8 rounded-lg shadow-md">
+        <h3 class="text-2xl font-semibold text-amber-800 mb-6 flex items-center"><svg xmlns="http://www.w3.org/2000/svg"
+            width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+            stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-map-pin mr-3 text-amber-700">
+            <path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"></path>
+            <circle cx="12" cy="10" r="3"></circle>
+          </svg>Notre Emplacement</h3>
+        <div class="mb-6">
+          <p class="text-gray-700 mb-2">15 Rue des Artisans</p>
+          <p class="text-gray-700 mb-4">75011 Paris, France</p>
+          <div class="flex items-center mb-2"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18"
+              viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+              stroke-linejoin="round" class="lucide lucide-phone text-amber-700 mr-2">
+              <path
+                d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z">
+              </path>
+            </svg><span class="text-gray-700">+33 1 23 45 67 89</span></div>
+          <div class="flex items-center"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18"
+              viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+              stroke-linejoin="round" class="lucide lucide-mail text-amber-700 mr-2">
+              <rect width="20" height="16" x="2" y="4" rx="2"></rect>
+              <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"></path>
+            </svg><span class="text-gray-700">contact@bricolage-quincaillerie.fr</span></div>
         </div>
-        <div class="map">
-          <iframe
+        <div class="rounded-lg overflow-hidden shadow-md h-60 md:h-72"><iframe
             src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2625.023591641224!2d2.375762076890182!3d48.85881337121063!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47e66dfbe489f1c1%3A0x7feef0d505ccbb46!2s75011%20Paris%2C%20France!5e0!3m2!1sen!2sus!4v1645457011111!5m2!1sen!2sus"
-            width="100%" height="300" style="border:0;" allowfullscreen="" loading="lazy">
-          </iframe>
-        </div>
+            width="100%" height="100%" allowfullscreen="" loading="lazy" title="Google Maps"
+            style="border: 0px;"></iframe></div>
       </div>
     </div>
   </div>

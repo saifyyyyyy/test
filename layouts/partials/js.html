@@ -1,29 +1,61 @@
 <script>
-    // Header scroll effect
-    const header = document.querySelector('header');
-    const logo = document.querySelector('.logo h1');
-    window.addEventListener('scroll', () => {
-        if (window.scrollY > 50) {
-            header.classList.add('scrolled');
+    const menuIcon = lucide.createIcons({icons: ['Menu', 'X', 'PenTool']});
+    document.getElementById('menu-icon').innerHTML = lucide.Menu({size: 24}).outerHTML;
+    document.getElementById('tool-icon').innerHTML = lucide.PenTool({size: 32}).outerHTML;
+
+    let isOpen = false;
+
+    const header = document.getElementById('header');
+    const menuButton = document.getElementById('menu-button');
+    const mobileMenu = document.getElementById('mobile-menu');
+    const siteTitle = document.getElementById('site-title');
+    const toolIcon = document.getElementById('tool-icon');
+
+    // Toggle mobile menu
+    menuButton.addEventListener('click', () => {
+        isOpen = !isOpen;
+        if (isOpen) {
+            mobileMenu.classList.remove('hidden');
+            document.getElementById('menu-icon').innerHTML = lucide.X({size: 24}).outerHTML;
         } else {
-            header.classList.remove('scrolled');
+            mobileMenu.classList.add('hidden');
+            document.getElementById('menu-icon').innerHTML = lucide.Menu({size: 24}).outerHTML;
         }
     });
 
-    // Mobile menu toggle
-    const menuToggle = document.querySelector('.menu-toggle');
-    const navLinks = document.querySelector('.nav-links');
-    menuToggle.addEventListener('click', () => {
-        navLinks.classList.toggle('active');
-    });
-
-    // Close mobile menu when clicking a link
-    document.querySelectorAll('.nav-links a').forEach(link => {
+    // Close mobile menu on link click
+    document.querySelectorAll('.mobile-link').forEach(link => {
         link.addEventListener('click', () => {
-            navLinks.classList.remove('active');
+            mobileMenu.classList.add('hidden');
+            document.getElementById('menu-icon').innerHTML = lucide.Menu({size: 24}).outerHTML;
+            isOpen = false;
         });
     });
 
-    // Update copyright year
-    document.getElementById('year').textContent = new Date().getFullYear();
+    // Scroll behavior
+    window.addEventListener('scroll', () => {
+        if (window.scrollY > 50) {
+            header.classList.remove('bg-transparent', 'py-4');
+            header.classList.add('bg-amber-800', 'shadow-md', 'py-2');
+            siteTitle.classList.remove('text-amber-800');
+            siteTitle.classList.add('text-white');
+            toolIcon.querySelector('svg').classList.remove('text-amber-800');
+            toolIcon.querySelector('svg').classList.add('text-white');
+            document.querySelectorAll('.nav-link').forEach(link => {
+                link.classList.remove('text-amber-900', 'hover:text-amber-700');
+                link.classList.add('text-white', 'hover:text-amber-200');
+            });
+        } else {
+            header.classList.add('bg-transparent', 'py-4');
+            header.classList.remove('bg-amber-800', 'shadow-md', 'py-2');
+            siteTitle.classList.add('text-amber-800');
+            siteTitle.classList.remove('text-white');
+            toolIcon.querySelector('svg').classList.add('text-amber-800');
+            toolIcon.querySelector('svg').classList.remove('text-white');
+            document.querySelectorAll('.nav-link').forEach(link => {
+                link.classList.add('text-amber-900', 'hover:text-amber-700');
+                link.classList.remove('text-white', 'hover:text-amber-200');
+            });
+        }
+    });
 </script>
