@@ -129,8 +129,9 @@
     <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
       {{range .imgs}}
       {{$img := resources.GetMatch (printf "img/products/%s" .file) }}
+      {{$img = $img.Resize "600x webp" }}
       <div class="relative group overflow-hidden rounded-lg shadow-md h-64 md:h-80">
-        <img src="{{$img.RelPermalink}}" alt="{{.text}}"
+        <img src="{{$img.RelPermalink}}" alt="{{.text}}" loading="lazy"
           class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110">
         <div
           class="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-4">
