@@ -1,6 +1,13 @@
 ---
 language: fr
 title: Quincaillerie SAÏFY
+
+menu:
+  - path: '#accueil'
+    text: Accueil
+  - path: '#horaires'
+    text: Horaires
+
 hero:
     btn: 
         num: 0262 16 12 74
