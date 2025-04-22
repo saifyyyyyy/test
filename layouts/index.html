@@ -1,8 +1,9 @@
 {{ define "main" }}
+{{$bg := resources.Get "img/herobg.jpeg"}}
 <section id="accueil" class="relative min-h-screen flex items-center bg-amber-50"
-  style="background-image: url(&quot;https://images.pexels.com/photos/1797428/pexels-photo-1797428.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=1600&quot;); background-size: cover; background-position: center center;">
+  style="background-image: url(&quot;{{$bg.RelPermalink}}&quot;); background-size: cover; background-position: center center;">
   <div class="absolute inset-0 bg-black bg-opacity-50"></div>
-  <div class="container mx-auto px-4 relative z-10">
+  <div class="container mx-auto px-4 relative z-10 my-20">
     <div class="max-w-2xl bg-white bg-opacity-90 p-8 md:p-12 rounded-lg shadow-xl">
       <h1 class="text-4xl md:text-5xl font-bold text-amber-900 mb-6">Bricolage &amp; Quincaillerie</h1>
       <p class="text-lg md:text-xl text-amber-800 mb-8">Votre magasin de proximité pour tous vos projets de rénovation
@@ -29,7 +30,7 @@
   </div>
 </section>
 
-<section id="produits" class="py-20 bg-amber-100">
+<!-- <section id="produits" class="py-20 bg-amber-100">
   <div class="container mx-auto px-4">
     <h2 class="text-3xl md:text-4xl font-bold text-amber-900 text-center mb-12">Nos Catégories de Produits</h2>
     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
@@ -123,7 +124,7 @@
       </div>
     </div>
   </div>
-</section>
+</section> -->
 
 <section class="py-20 bg-amber-50">
   <div class="container mx-auto px-4">
