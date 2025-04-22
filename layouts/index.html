@@ -1,34 +1,30 @@
 {{ define "main" }}
+<!-- Hero -->
 {{$bg := resources.Get "img/herobg.jpeg"}}
+{{ with .Params.hero }}
 <section id="accueil" class="relative min-h-screen flex items-center bg-amber-50"
   style="background-image: url(&quot;{{$bg.RelPermalink}}&quot;); background-size: cover; background-position: center center;">
   <div class="absolute inset-0 bg-black bg-opacity-50"></div>
   <div class="container mx-auto px-4 relative z-10 my-20">
     <div class="max-w-2xl bg-white bg-opacity-90 p-8 md:p-12 rounded-lg shadow-xl">
-      <h1 class="text-4xl md:text-5xl font-bold text-amber-900 mb-6">Bricolage &amp; Quincaillerie</h1>
-      <p class="text-lg md:text-xl text-amber-800 mb-8">Votre magasin de proximité pour tous vos projets de rénovation
-        et construction</p>
-      <div class="flex items-center mb-4"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20"
-          viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-          stroke-linejoin="round" class="lucide lucide-map-pin text-amber-700 mr-3">
-          <path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"></path>
-          <circle cx="12" cy="10" r="3"></circle>
+      <h1 class="text-4xl md:text-5xl font-bold text-amber-900 mb-6">{{$.Title}}</h1>
+      <p class="text-lg md:text-xl text-amber-800 mb-8">
+        {{.text}}
+      </p>
+      <a href="tel:{{.btn.num}}"
+        class="inline-flex gap-2 items-center bg-amber-700 hover:bg-amber-800 text-white font-medium py-3 px-6 rounded-lg transition-colors duration-300">
+        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none"
+          stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path
+            d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z">
+          </path>
         </svg>
-        <p class="text-gray-800">15 Rue des Artisans, 75011 Paris, France</p>
-      </div>
-      <div class="flex items-center mb-6"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20"
-          viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-          stroke-linejoin="round" class="lucide lucide-clock text-amber-700 mr-3">
-          <circle cx="12" cy="12" r="10"></circle>
-          <polyline points="12 6 12 12 16 14"></polyline>
-        </svg>
-        <p class="text-gray-800">Lun-Sam: 8h00-19h00 | Dim: 9h00-13h00</p>
-      </div><a href="#produits"
-        class="inline-block bg-amber-700 hover:bg-amber-800 text-white font-medium py-3 px-6 rounded-lg transition-colors duration-300">Découvrir
-        nos produits</a>
+        {{.btn.text}}
+      </a>
     </div>
   </div>
 </section>
+{{ end }}
 
 <!-- <section id="produits" class="py-20 bg-amber-100">
   <div class="container mx-auto px-4">
@@ -38,7 +34,7 @@
         <div class="p-6">
           <div class="mb-4 flex justify-center"><svg xmlns="http://www.w3.org/2000/svg" width="40" height="40"
               viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-              stroke-linejoin="round" class="lucide lucide-wrench text-amber-700">
+              stroke-linejoin="round" class=" text-amber-700">
               <path
                 d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z">
               </path>
@@ -52,7 +48,7 @@
         <div class="p-6">
           <div class="mb-4 flex justify-center"><svg xmlns="http://www.w3.org/2000/svg" width="40" height="40"
               viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-              stroke-linejoin="round" class="lucide lucide-paintbrush text-amber-700">
+              stroke-linejoin="round" class=" text-amber-700">
               <path
                 d="M18.37 2.63 14 7l-1.59-1.59a2 2 0 0 0-2.82 0L8 7l9 9 1.59-1.59a2 2 0 0 0 0-2.82L17 10l4.37-4.37a2.12 2.12 0 1 0-3-3Z">
               </path>
@@ -68,7 +64,7 @@
         <div class="p-6">
           <div class="mb-4 flex justify-center"><svg xmlns="http://www.w3.org/2000/svg" width="40" height="40"
               viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-              stroke-linejoin="round" class="lucide lucide-hammer text-amber-700">
+              stroke-linejoin="round" class=" text-amber-700">
               <path d="m15 12-8.373 8.373a1 1 0 1 1-3-3L12 9"></path>
               <path d="m18 15 4-4"></path>
               <path
@@ -84,7 +80,7 @@
         <div class="p-6">
           <div class="mb-4 flex justify-center"><svg xmlns="http://www.w3.org/2000/svg" width="40" height="40"
               viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-              stroke-linejoin="round" class="lucide lucide-pencil text-amber-700">
+              stroke-linejoin="round" class=" text-amber-700">
               <path d="M17 3a2.85 2.83 0 1 1 4 4L7.5 20.5 2 22l1.5-5.5Z"></path>
               <path d="m15 5 4 4"></path>
             </svg></div>
@@ -97,7 +93,7 @@
         <div class="p-6">
           <div class="mb-4 flex justify-center"><svg xmlns="http://www.w3.org/2000/svg" width="40" height="40"
               viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-              stroke-linejoin="round" class="lucide lucide-pipette text-amber-700">
+              stroke-linejoin="round" class=" text-amber-700">
               <path d="m2 22 1-1h3l9-9"></path>
               <path d="M3 21v-3l9-9"></path>
               <path d="m15 6 3.4-3.4a2.1 2.1 0 1 1 3 3L18 9l.4.4a2.1 2.1 0 1 1-3 3l-3.8-3.8a2.1 2.1 0 1 1 3-3l.4.4Z">
@@ -112,7 +108,7 @@
         <div class="p-6">
           <div class="mb-4 flex justify-center"><svg xmlns="http://www.w3.org/2000/svg" width="40" height="40"
               viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-              stroke-linejoin="round" class="lucide lucide-blocks text-amber-700">
+              stroke-linejoin="round" class=" text-amber-700">
               <rect width="7" height="7" x="14" y="3" rx="1"></rect>
               <path d="M10 21V8a1 1 0 0 0-1-1H4a1 1 0 0 0-1 1v12a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1v-5a1 1 0 0 0-1-1H3">
               </path>
@@ -126,7 +122,7 @@
   </div>
 </section> -->
 
-<section class="py-20 bg-amber-50">
+<!-- <section class="py-20 bg-amber-50">
   <div class="container mx-auto px-4">
     <h2 class="text-3xl md:text-4xl font-bold text-amber-900 text-center mb-12">Notre Magasin</h2>
     <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
@@ -159,66 +155,74 @@
       </div>
     </div>
   </div>
-</section>
+</section> -->
 
-<section id="horaires" class="py-20 bg-white">
-  <div class="container mx-auto px-4">
-    <h2 class="text-3xl md:text-4xl font-bold text-amber-900 text-center mb-12">Informations Pratiques</h2>
-    <div class="grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-16">
-      <div class="bg-amber-50 p-6 md:p-8 rounded-lg shadow-md">
-        <h3 class="text-2xl font-semibold text-amber-800 mb-6 flex items-center"><svg xmlns="http://www.w3.org/2000/svg"
-            width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-            stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-clock mr-3 text-amber-700">
-            <circle cx="12" cy="12" r="10"></circle>
-            <polyline points="12 6 12 12 16 14"></polyline>
-          </svg>Horaires d'Ouverture</h3>
-        <ul class="space-y-3">
-          <li class="flex justify-between"><span class="font-medium text-amber-900">Lundi</span><span
-              class="text-gray-700">8h00 - 19h00</span></li>
-          <li class="flex justify-between"><span class="font-medium text-amber-900">Mardi</span><span
-              class="text-gray-700">8h00 - 19h00</span></li>
-          <li class="flex justify-between"><span class="font-medium text-amber-900">Mercredi</span><span
-              class="text-gray-700">8h00 - 19h00</span></li>
-          <li class="flex justify-between"><span class="font-medium text-amber-900">Jeudi</span><span
-              class="text-gray-700">8h00 - 19h00</span></li>
-          <li class="flex justify-between"><span class="font-medium text-amber-900">Vendredi</span><span
-              class="text-gray-700">8h00 - 19h00</span></li>
-          <li class="flex justify-between"><span class="font-medium text-amber-900">Samedi</span><span
-              class="text-gray-700">8h00 - 19h00</span></li>
-          <li class="flex justify-between"><span class="font-medium text-amber-900">Dimanche</span><span
-              class="text-gray-700">9h00 - 13h00</span></li>
-        </ul>
-      </div>
-      <div class="bg-amber-50 p-6 md:p-8 rounded-lg shadow-md">
-        <h3 class="text-2xl font-semibold text-amber-800 mb-6 flex items-center"><svg xmlns="http://www.w3.org/2000/svg"
-            width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-            stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-map-pin mr-3 text-amber-700">
-            <path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"></path>
-            <circle cx="12" cy="10" r="3"></circle>
-          </svg>Notre Emplacement</h3>
-        <div class="mb-6">
-          <p class="text-gray-700 mb-2">15 Rue des Artisans</p>
-          <p class="text-gray-700 mb-4">75011 Paris, France</p>
-          <div class="flex items-center mb-2"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18"
+{{ with .Params.address }}
+<section id="horaires" class="py-20 bg-white container mx-auto px-4">
+  <div class="grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-16">
+    <div class="bg-amber-50 p-6 md:p-8 rounded-lg shadow-md">
+      <h3 class="text-2xl font-semibold text-amber-800 mb-6 flex items-center">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+          stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+          class=" mr-3 text-amber-700">
+          <circle cx="12" cy="12" r="10"></circle>
+          <polyline points="12 6 12 12 16 14"></polyline>
+        </svg>
+        {{.timings_heading}}
+      </h3>
+      <ul class="text-gray-700 space-y-4">
+        {{range .timings}}
+        <li class="">
+          <h4 class=" font-semibold text-amber-800">{{.title}}</h4>
+          <div class="">{{.times}}</div>
+        </li>
+        {{end}}
+      </ul>
+    </div>
+
+    <div class="bg-amber-50 p-6 md:p-8 rounded-lg shadow-md">
+      <h3 class="text-2xl font-semibold text-amber-800 mb-6 flex items-center">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+          stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+          class="-pin mr-3 text-amber-700">
+          <path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"></path>
+          <circle cx="12" cy="10" r="3"></circle>
+        </svg>
+        {{.address_heading}}
+      </h3>
+      <div class="text-gray-700 mb-6">
+        <address class="">
+          {{range .address}}{{.}}<br>{{end}}
+        </address>
+        <a href="tel:{{.tel}}" class="flex items-center mt-2">
+          <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none"
+            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+            class=" text-amber-700 mr-2">
+            <path
+              d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z">
+            </path>
+          </svg>
+          {{.tel}}
+        </a>
+        <!-- <div class="flex items-center">
+          <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18"
               viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-              stroke-linejoin="round" class="lucide lucide-phone text-amber-700 mr-2">
-              <path
-                d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z">
-              </path>
-            </svg><span class="text-gray-700">+33 1 23 45 67 89</span></div>
-          <div class="flex items-center"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18"
-              viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-              stroke-linejoin="round" class="lucide lucide-mail text-amber-700 mr-2">
+              stroke-linejoin="round" class=" text-amber-700 mr-2">
               <rect width="20" height="16" x="2" y="4" rx="2"></rect>
               <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"></path>
-            </svg><span class="text-gray-700">contact@bricolage-quincaillerie.fr</span></div>
-        </div>
-        <div class="rounded-lg overflow-hidden shadow-md h-60 md:h-72"><iframe
-            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2625.023591641224!2d2.375762076890182!3d48.85881337121063!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47e66dfbe489f1c1%3A0x7feef0d505ccbb46!2s75011%20Paris%2C%20France!5e0!3m2!1sen!2sus!4v1645457011111!5m2!1sen!2sus"
-            width="100%" height="100%" allowfullscreen="" loading="lazy" title="Google Maps"
-            style="border: 0px;"></iframe></div>
+            </svg>
+            <span class="">contact@bricolage-quincaillerie.fr</span>
+          </div> -->
+      </div>
+      <div class="rounded-lg overflow-hidden shadow-md h-60 md:h-72">
+        <iframe
+          src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d470.78124911997645!2d55.412177!3d-20.8953079!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x21827f3a800e310b%3A0x290f88e754afac61!2sQuincaillerie%20Sa%C3%AFfy!5e1!3m2!1sen!2s!4v1745311856166!5m2!1sen!2s"
+          width="100%" height="100%" allowfullscreen="" loading="lazy" title="Google Maps"
+          style="border: 0px;"></iframe>
       </div>
     </div>
   </div>
 </section>
+{{ end }}
+
 {{ end }}
