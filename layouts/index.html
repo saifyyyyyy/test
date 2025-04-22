@@ -122,40 +122,26 @@
   </div>
 </section> -->
 
-<!-- <section class="py-20 bg-amber-50">
+{{ with .Params.nous_vendons }}
+<section class="py-20 bg-amber-50" id="nous-vendons">
   <div class="container mx-auto px-4">
-    <h2 class="text-3xl md:text-4xl font-bold text-amber-900 text-center mb-12">Notre Magasin</h2>
+    <h2 class="text-3xl md:text-4xl font-bold text-amber-900 text-center mb-12">{{.heading}}</h2>
     <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-      <div class="relative group overflow-hidden rounded-lg shadow-md h-64 md:h-80"><img
-          src="https://images.pexels.com/photos/1669754/pexels-photo-1669754.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=1260&amp;h=750&amp;dpr=2"
-          alt="Notre large sélection d'outils"
+      {{range .imgs}}
+      {{$img := resources.GetMatch (printf "img/products/%s" .file) }}
+      <div class="relative group overflow-hidden rounded-lg shadow-md h-64 md:h-80">
+        <img src="{{$img.RelPermalink}}" alt="{{.text}}"
           class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110">
         <div
           class="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-4">
-          <p class="text-white font-medium">Notre large sélection d'outils</p>
+          <p class="text-white font-medium">{{.text}}</p>
         </div>
       </div>
-      <div class="relative group overflow-hidden rounded-lg shadow-md h-64 md:h-80"><img
-          src="https://images.pexels.com/photos/5691605/pexels-photo-5691605.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=1260&amp;h=750&amp;dpr=2"
-          alt="Section peinture et décoration"
-          class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110">
-        <div
-          class="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-4">
-          <p class="text-white font-medium">Section peinture et décoration</p>
-        </div>
-      </div>
-      <div class="relative group overflow-hidden rounded-lg shadow-md h-64 md:h-80"><img
-          src="https://images.pexels.com/photos/1558687/pexels-photo-1558687.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=1260&amp;h=750&amp;dpr=2"
-          alt="Matériaux de construction de qualité"
-          class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110">
-        <div
-          class="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-4">
-          <p class="text-white font-medium">Matériaux de construction de qualité</p>
-        </div>
-      </div>
+      {{end}}
     </div>
   </div>
-</section> -->
+</section>
+{{ end }}
 
 {{ with .Params.address }}
 <section id="horaires" class="py-20 bg-white container mx-auto px-4">
