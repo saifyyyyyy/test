@@ -14,7 +14,7 @@ hero:
     btn: 
         num: 0262 16 12 74
         text: Téléphone
-    text: Chez SAÏFY, nous mettons un point d’honneur à proposer tout ce dont vous avez besoin pour le bricolage, des petits éléments de fixation aux outils essentiels - pour que vous trouviez exactement ce que vous cherchez au bonne endroit. Nous livrons aussi du ciment. 
+    text: Chez SAÏFY, nous mettons un point d’honneur à proposer tout ce dont vous avez besoin pour le bricolage, des petits éléments de fixation aux outils essentiels - pour que vous trouviez exactement ce que vous cherchez au bon endroit. Nous livrons aussi du ciment. 
 
 nous_vendons:
   heading: Nous vendons
